@@ -1,6 +1,10 @@
+from dotenv import load_dotenv
+load_dotenv()
+
+import os
 import google.generativeai as genai
 
-genai.configure(api_key='AIzaSyBMmRHx4JziYhf5KxaHBArfHNPKZszcDvU')
+genai.configure(api_key=os.environ.get("google-api-key"))
 model = genai.GenerativeModel('gemini-1.0-pro-latest'). start_chat()
 
 # Initialize
